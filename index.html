@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>يُسر - يسر للقراءة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-bg">
+        <div class="iphone-frame">
+            <div class="dynamic-island"></div>
+            <div class="app-screen">
+                <!-- Header -->
+                <header class="app-header">
+                    <button id="settingsBtn" class="icon-btn">⚙️</button>
+                    <div class="title-wrap">
+                        <h1>يُسر</h1>
+                        <p>يسر للقراءة</p>
+                    </div>
+                    <div class="spacer"></div>
+                </header>
+                <!-- Settings Drawer -->
+                <div id="settingsDrawer" class="settings-drawer">
+                    <div class="settings-header">
+                        <h3>الإعدادات</h3>
+                        <button id="closeSettings" class="icon-btn">✕</button>
+                    </div>
+                    <div class="setting-group">
+                        <label>اللهجة</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="dialect" value="eg" checked> مصرية 🇪🇬</label>
+                            <label><input type="radio" name="dialect" value="kw"> كويتية 🇰🇼</label>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <label>سرعة الصوت: <span id="speedVal">1</span></label>
+                        <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1">
+                    </div>
+                    <div class="setting-group">
+                        <label>حدة الصوت: <span id="pitchVal">1</span></label>
+                        <input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1">
+                    </div>
+                    <div class="setting-group">
+                        <label>التكرار: <span id="repeatVal">1</span></label>
+                        <div class="repeat-ctrl">
+                            <button onclick="changeRepeat(-1)">-</button>
+                            <span id="repeatDisplay">1</span>
+                            <button onclick="changeRepeat(1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content -->
+                <main id="content" class="content"></main>
+                <!-- Bottom Nav -->
+                <nav class="bottom-nav">
+                    <button data-tab="letters" class="active">🔤<span>حروف</span></button>
+                    <button data-tab="numbers">🔢<span>أرقام</span></button>
+                    <button data-tab="camera">📸<span>صور واقرأ</span></button>
+                    <button data-tab="write">✍️<span>اكتب واقرأ</span></button>
+                    <button data-tab="activities">🎨<span>أنشطة</span></button>
+                    <button data-tab="report">📊<span>تقرير</span></button>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
